@@ -160,3 +160,9 @@ Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://tw
 Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
+
+forked and edited by
+SkywalkerDarth
+Isaac-Oyediran
+
+for version 3 updating db_storage.py and file_storage.py
