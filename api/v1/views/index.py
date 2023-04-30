@@ -3,7 +3,7 @@
 """
 view.py file
 """
-from flask import jsonify, Blueprint
+from flask import jsonify
 from api.v1.views import app_views
 from models import storage
 
