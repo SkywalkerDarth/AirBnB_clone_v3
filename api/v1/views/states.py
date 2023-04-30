@@ -48,5 +48,5 @@ def get_state_id(state_id):
             if key not in ['id', 'created_at', 'updated_at']:
             settatr(state, key, value)
             storage.save()
-        return jsonify(state.to_dict()),200
+        return jsonify(state.to_dict()), 200
 
