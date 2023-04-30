@@ -12,11 +12,16 @@ app = Flask(__name__)
 app.register_blueprint(app_views)
 
 
+
 @app.teardown_appcontext
 def close_db_session(error):
     """ slash routing"""
     storage.close()
 
+@app.errorhandler(404)
+def not_found(error):
+    """ Returns 404 status """
+    return make_response(jsonify({"error": "Not found"}), 404)
 
 if __name__ == "__main__":
     HBNB_API_HOST = getenv('HBNB_API_HOST')
