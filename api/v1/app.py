@@ -11,15 +11,15 @@ from api.v1.views import app_views
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
+@app.teardown_appcontext
+def close_db_sesion(error):
+    """slash routing"""
+    storage.close()
+
 @app.errorhandler(404)
 def page_not_found:
     """handle 404 errors"""
     return ({"error": "Not found"}), 404
-
-@app.teardown_appcontext
-def close_db_session(error):
-    """ slash routing"""
-    storage.close()
 
 if __name__ == "__main__":
     HBNB_API_HOST = getenv('HBNB_API_HOST')
