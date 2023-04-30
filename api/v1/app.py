@@ -19,9 +19,9 @@ def close_db_session(error):
     storage.close()
 
 @app.errorhandler(404)
-def not_found(error):
-    """ Returns 404 status """
-    return make_response(jsonify({"error": "Not found"}), 404)
+def page_not_found(e):
+    """ Error handler"""
+    return ({'error': 'Not found'}), 404
 
 if __name__ == "__main__":
     HBNB_API_HOST = getenv('HBNB_API_HOST')
