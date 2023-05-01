@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
+# index.py file
 """
-view.py file
+index.py file
 """
 from flask import jsonify
 from api.v1.views import app_views

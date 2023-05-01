@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
+# states
 """
 states.py file
 """
@@ -9,7 +9,7 @@ from models import storage
 from api.v1.views import app_views
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
-def states():
+def get_states():
     """ Retrieve list of all State objects """
     rl_states = storage.all(State)
     return jsonify([obj.to_dict() for obj in rl_states.values()])
