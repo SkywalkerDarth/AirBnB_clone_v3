@@ -53,10 +53,10 @@ def put_state(state_id):
     state = storage.get("State", state_id)
     if not state:
         abort(404)
-    body_request = request.get_json()
-    if not body_request:
+    b_request = request.get_json()
+    if not b_request:
         abort(400, "Not a JSON")
-    for k, v in body_request.items():
+    for k, v in b_request.items():
         if k != 'id' and k != 'created_at' and k != 'updated_at':
             setattr(state, k, v)
     storage.save()
