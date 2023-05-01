@@ -11,8 +11,8 @@ from api.v1.views import app_views
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
 def get_states():
     """ retrieves list of all state objects """
-    get_state = storage.all(State)
-    return jsonify([obj.to_dict() for obj in get_states.values()])
+    d_state = storage.all(State)
+    return jsonify([obj.to_dict() for obj in d_states.values()])
 
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
 def object_state_id(state_id):
